@@ -58,10 +58,6 @@ function getWeather(){
 }
 
 function displayWeather(data){
-    const tempDivInfo  = document.getElementById('temp-div');
-    const weatherInfoDiv  = document.getElementById('weather-info');
-    const weatherIcon  = document.getElementById('weather-icon');
-    const hourlyForecastDiv  = document.getElementById('hourly-forecast');
 
     const latCoord = data.lat;
     const lonCoord = data.lon;
@@ -76,35 +72,6 @@ function displayWeather(data){
         state: cityState
     }
 
-    //clear previous content
-
-    weatherInfoDiv.innerHTML = '';
-    hourlyForecastDiv.innerHTML = '';
-    tempDivInfo.innerHTML = '';
-
-       
-        console.log('City Name: ' + cityName);
-       
-        // const temperature = Math.round(data.main.temp = 273.15);
-        // const description = data.weater[0].description;
-        // const iconCode = data.weater[0].icon;
-        // const iconUrl  = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
-
-        // const temperatureHTML = `
-        // <p> ${temperature}C</p>
-        // `;
-        const weatherHtml = `
-            <p>${cityName}</p>
-            <p>${cityState}</p>
-        `;
-
-        // tempDivInfo.innerHTML = temperatureHTML;
-        weatherInfoDiv.innerHTML = weatherHtml;
-        // weatherIcon.src = iconUrl;
-        // weatherIcon.alt = description;
-
-        // showImage();
-    // }
     return locationData;
 }
 
@@ -136,6 +103,7 @@ if(weatherData.cod === '404'){
     <p> ${temperature}C</p>
     `;
 
+    
     const weatherHtml = `
     <p>${cityName}</p>
     <p>${description}</p>
