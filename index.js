@@ -127,6 +127,8 @@ async function getAsyncLocation(){
 
     const currentWeatherUrl  = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${apiKey}`
 
+
+
     try{
         const weatherResponse = await fetch(currentWeatherUrl);
         const resp = await weatherResponse.json()
@@ -157,6 +159,8 @@ async function getWeatherByCoords(){
         const forecatsWeatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
         const forecastWeatherResponse = await fetch(forecatsWeatherUrl);
         const asyncForecastWeatherData = await forecastWeatherResponse.json();
+
+
 
 
         locationWeather(asyncWeatherData);
@@ -240,6 +244,8 @@ function displayHourlyForecast(json){
 
     next5Days.forEach(item => {
         const dateTime = new Date (item.dt * 1000);
+        const weekDayName = weekDayNames[dateTime.getUTCDay()];
+
         const month = monthsNames[dateTime.getMonth()]; // get month Name
         const day = dateTime.getDate();            // get date
         const hour = dateTime.getHours();
@@ -251,7 +257,7 @@ function displayHourlyForecast(json){
 
         const hourlyItemHtml = `
         <div class="hourly-item">
-         <span> ${day} ${month}</span>
+         <span> ${weekDayName}</span>
         <span> ${hour}:00</span>
         <img src="${iconUrl}" alt="Hourly Weather Icon">
         <span> ${temperature}°C</snap>
