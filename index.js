@@ -41,7 +41,7 @@ function getWeather(){
     }
 
     // const currentWetherUrl  = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${apiKey}`
-    const currentWeatherUrl  = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${apiKey}`
+    const currentWeatherUrl  = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${apiKey}`
 
 
     fetch (currentWeatherUrl)
@@ -125,7 +125,7 @@ async function getAsyncLocation(){
         return;
     }
 
-    const currentWeatherUrl  = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${apiKey}`
+    const currentWeatherUrl  = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${apiKey}`
 
 
 
