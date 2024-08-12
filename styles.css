@@ -31,6 +31,7 @@ input{
     border-radius: 10px;
     border: 1px solid white;
     margin-top: 20px;
+    text-align: center;
 }
 
 button{
@@ -68,6 +69,7 @@ button:hover{
 
 #hourly-forecast{
     margin-top: 50px;
+    padding-bottom: 30px;
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
