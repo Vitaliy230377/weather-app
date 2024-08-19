@@ -219,7 +219,6 @@ function locationWeather(weatherData){
                 <p>${description}</p>
                 `;
 
-
             tempDivInfo.innerHTML = temperatureHTML;
             weatherInfoDiv.innerHTML = weatherHtml;
             weatherIcon.src = iconUrl;
@@ -266,3 +265,4 @@ function displayHourlyForecast(json){
         hourlyForecastDiv.innerHTML += hourlyItemHtml;
     });
 }
+//commit from cloned repo
